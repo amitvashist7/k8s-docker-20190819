@@ -76,3 +76,64 @@
    76  cd docker/
    77  ls
    78  history > Docker_Day1.txt
+   79  git add . ; git commit -m "Docker Hist"; git push origin master 
+   80  ls
+   81  docker images 
+   82  docker history myhttpd:v2
+   83  ls
+   84  mkdir Dockerfile
+   85  cd Dockerfile/
+   86  ls
+   87  mkdir apache
+   88  cd apache/
+   89  ls
+   90  vim Dockerfile
+   91  ls
+   92  docker images 
+   93  docker build -t myapache:v1 .
+   94  docker images 
+   95  docker run -d myapache:v1
+   96  docker ps 
+   97  docker inspect d3e5e4f33402        
+   98  curl 172.17.0.7
+   99  ls
+  100  cd ..
+  101  ls
+  102  cd 
+  103  ls
+  104  cd k8s-docker-20190819/
+  105  ls
+  106  docker images 
+  107  docker tag myapache:v1 amitvashist7/myapache-qual:v1 
+  108  docker images 
+  109  docker login 
+  110  docker push amitvashist7/myapache-qual:v1
+  111  ls
+  112  docker kill $(docker ps -aq)
+  113  docker rm $(docker ps -aq)
+  114  docker ps 
+  115  docker ps -a
+  116  docker images
+  117  docker images -q
+  118  docker rmi $(docker images -q)
+  119  docker images -q
+  120  docker rmi $(docker images -q)
+  121  docker rmi $(docker images -q) --force
+  122  docker images -q
+  123  ls
+  124  cd 
+  125  docker version 
+  126  docker images 
+  127  docker ps -a 
+  128  docker pull amitvashist7/myapache-qual:v1
+  129  docker images 
+  130  docker run -d amitvashist7/myapache-qual:v1 
+  131  curl 172.17.0.2
+  132  ls
+  133  cd k8s-docker-20190819/
+  134  ls
+  135  git add . ; git commit -m "Docker File v1"; git push origin master 
+  136  ls
+  137  cd docker/
+  138  ls
+  139  history > Docker_Day1.txt 
