@@ -444,3 +444,51 @@
   444  cd docker/
   445  ls
   446  history > Docker_Day1.txt 
+  447  git add . ; git commit -m "Docker File v2 - Hist"; git push origin master 
+  448  docker ps 
+  449  docker run -d -P amitvashist7/myapache-qual:v2 
+  450  docker ps 
+  451  docker run -d -P amitvashist7/myapache-qual:v2 
+  452  docker ps 
+  453  netstat -tulnp | grep 32769
+  454* netstat -tul
+  455  docker run -d -P amitvashist7/myapache-qual:v4 
+  456  docker ps 
+  457  docker run -d -p 8080:80 amitvashist7/myapache-qual:v4 
+  458  docker run -d -p 8081:80 amitvashist7/myapache-qual:v4 
+  459  docker ps 
+  460  netstat -tulnp
+  461  iptables -L
+  462  history 
+  463  docker ps 
+  464  docker images 
+  465  docker images inspect amitvashist7/myapache-qual:v4
+  466  docker image inspect amitvashist7/myapache-qual:v4
+  467  docker image inspect amitvashist7/myapache-qual:v1
+  468  docker image inspect amitvashist7/myapache-qual:v1 --help
+  469  docker image inspect amitvashist7/myapache-qual:v1 -f 
+  470  docker image inspect amitvashist7/myapache-qual:v1 -f abc
+  471  ls
+  472  docker image inspect amitvashist7/myapache-qual:v1 -f go
+  473  docker image inspect amitvashist7/myapache-qual:v1
+  474  docker network ls 
+  475  ip addr 
+  476  docker network create --help
+  477  docker network create --driver=bridge --subnet=172.28.0.0/16 --ip-range=172.28.5.0/24 --gateway=172.28.5.254 mybr0
+  478  docker network ls 
+  479  docker network inspect mybr0               
+  480  ip addr 
+  481  docker run -d -p 8081:80 --network mybr0 amitvashist7/myapache-qual:v4 
+  482  docker run -d -p 8089:80 --network mybr0 amitvashist7/myapache-qual:v4 
+  483  docker ps 
+  484  docker inspect 2811bddbb9dd        
+  485  curl 172.28.5.0
+  486  docker network inspect mybr0               
+  487  docker run -d -p 8090:80 --network mybr0 amitvashist7/myapache-qual:v2
+  488  docker network inspect mybr0               
+  489  ls
+  490  cd k8s-docker-20190819/
+  491  ls
+  492  cd docker/
+  493  ls
+  494  history > Docker_Day1.txt 
