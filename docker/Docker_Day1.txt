@@ -270,3 +270,92 @@
   270  ls
   271  history 
   272  history > Docker_Day1.txt 
+  273  git add . ; git commit -m "Docker File v2 - Hist"; git push origin master 
+  274  ip netns 
+  275  docker network ls 
+  276  ls
+  277  cd ls
+  278  cd 
+  279  ls
+  280  cd /var/run/docker/netns/
+  281  ls
+  282  ls -a
+  283  ls
+  284  docker ps 
+  285  docker run -itd ubuntu
+  286  ip netns 
+  287  ls
+  288  cd ..
+  289  ln -s /var/run/docker/netns /var/run/netns
+  290  ip netns 
+  291  docker ps 
+  292  docker inspect f899e90a1a82 | grep -i 3b663689ebfd 
+  293  ip link 
+  294  ip -n 3b663689ebfd link
+  295  ip -n 3b663689ebfd addr
+  296  history 
+  297  cd
+  298  docker volumes 
+  299  docker volumes ls 
+  300  docker volume ls 
+  301  docker volumes 
+  302  docker ps -aq
+  303  docker kill $(docker ps -aq)
+  304  docker rm $(docker ps -aq)
+  305  docker volume ls 
+  306  docker volume ls -
+  307  docker volume ls -q
+  308  docker volume rm $(docker volume ls -q)
+  309  docker volume ls 
+  310  docker run --name alpha -itd -v /var/log busybox /bin/sh 
+  311  docker images 
+  312  docker ps 
+  313  docker run -it --name beta --volume-from alpha ubuntu /bin/bash
+  314  docker run -it --name beta --volumes-from alpha ubuntu /bin/bash
+  315  docker volume ls 
+  316  cd  /var/lib/docker/volumes/d439953115e9889421e363629228acbc07699b7403510693f12b7b60f0a88afc/
+  317  ls
+  318  cd _data/
+  319  ls
+  320  cat date 
+  321  cd 
+  322  docker volume craete myvol02
+  323  docker volume create myvol02
+  324  docker run -it --name beta01 --volumes-from alpha --mount src=myvol02,target=/var/myapp ubuntu /bin/bash
+  325  cd /var/lib/docker/volumes/
+  326  ls
+  327  cd myvol02/
+  328  ls
+  329  cat _data/hello.txt 
+  330  cat ../d439953115e9889421e363629228acbc07699b7403510693f12b7b60f0a88afc/_data/hostname 
+  331  cd 
+  332  ls
+  333  cd k8s-docker-20190819/
+  334  ls
+  335  cd docker/
+  336  ls
+  337  cd Dockerfile/
+  338  ls
+  339  cd apache/
+  340  ls
+  341  pwd
+  342  docker images 
+  343  docker run -d -v /root/k8s-docker-20190819/docker/Dockerfile/apache:/var/www/html/myapp amitvashist7/myapache-qual:v4
+  344  docker ps 
+  345  docker inspect 5f1ed4ab3bc2        
+  346  curl 172.17.0.4
+  347  curl 172.17.0.4/info.html
+  348  curl 172.17.0.4/myapp/Dockerfile
+  349  curl 172.17.0.4/myapp/info.html
+  350  ls
+  351  vim info.html 
+  352  curl 172.17.0.4/myapp/info.html
+  353  docker run -it -v /root/k8s-docker-20190819/docker/Dockerfile/apache:/var/www/html/myapp ubuntu /bin/bash
+  354  curl 172.17.0.4/myapp/info.html
+  355  docker run -it -v /root/k8s-docker-20190819/docker/Dockerfile/apache:/var/www/html/myapp:ro ubuntu /bin/bash
+  356  cd ..
+  357  ls
+  358  cd ..
+  359  ls
+  360  history 
+  361  history > Docker_Day1.txt 
