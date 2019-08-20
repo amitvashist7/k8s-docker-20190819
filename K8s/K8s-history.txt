@@ -1,0 +1,64 @@
+    1  git clone https://github.com/amitvashist7/k8s-docker-20190819.git
+    2  ls
+    3  git clone https://github.com/amitvashist7/azure-devops-k8s-20190706.git
+    4  ls
+    5  cd k8s-docker-20190819/
+    6  ls
+    7  mkdir  K8s
+    8  ls
+    9  cd K8s/
+   10  ls
+   11  cd 
+   12  ls
+   13  cd k8s-docker-20190819/
+   14  ls
+   15  cd K8s/
+   16  ls
+   17  cp -rf ../../azure-devops-k8s-20190706/K8s/setup 01-Setup
+   18  ls
+   19  cd 01-Setup/
+   20  ls
+   21  vim install-kubernetes.sh 
+   22  ip addr 
+   23  vi install-kubernetes.sh 
+   24  chmod +x install-kubernetes.sh  install-node.sh 
+   25  ls
+   26  cd ../../
+   27  git add . ; git commit -m "K8s Setup"; git push origin  master 
+   28  ls
+   29  K8s/
+   30  ls
+   31  cd K8s/
+   32  ls
+   33  cd 01-Setup/
+   34  ls
+   35  ./install-kubernetes.sh 
+   36  cd 
+   37  mkdir -p $HOME/.kube
+   38  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+   39  kubectl get nodes 
+   40  exit
+   41  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+   42  kubectl get nodes
+   43  ls
+   44  cd k8s-docker-20190819/K8s/
+   45  ls
+   46  cp -rf ../../azure-devops-k8s-20190706/K8s/first-app 02-First-App
+   47  ls
+   48  cd 02-First-App/
+   49  ls
+   50  vim helloworld.yml 
+   51  ls
+   52  kubectl get nodes 
+   53  kubectl get pods 
+   54  ls
+   55  cat helloworld.yml 
+   56  kubectl create -f helloworld.yml 
+   57  kubectl get pods 
+   58  kubectl get pods -o wide 
+   59  kubectl  get pods 
+   60  kubectl describe pods nodehelloworld  
+   61  ls
+   62  cd ..
+   63  ls
+   64  history > K8s-history.txt
