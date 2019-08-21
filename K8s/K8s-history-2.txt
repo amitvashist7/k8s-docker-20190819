@@ -74,3 +74,65 @@
  1045  ls
  1046  cat K8s-history-2.txt >> K8s-history.txt 
  1047  history > K8s-history-2.txt 
+
+1016  kubectl get pods
+ 1017  kubectl create -f helloworld.yml
+ 1018  kubectl get pods
+ 1019  kubectl get deployments
+ 1020  kubectl get rs
+ 1021  kubectl describe rs helloworld-deployment-6664884558
+ 1022  ls
+ 1023  kubectl get deployment
+ 1024  kubectl scale --replicas=10 deployment helloworld-deployment
+ 1025  kubectl get rs
+ 1026  kubectl get pods
+ 1027  ls
+ 1028  kubectl get deployments
+ 1029  kubectl expose deployment helloworld-deployment --type=Loadbalancer
+ 1030  kubectl expose deployment helloworld-deployment --type=LoadBalancer
+ 1031  kubectl get svc
+ 1032  cd
+ 1033  kubectl get deployment
+ 1034  kubectl describe deployment helloworld-deployment
+ 1035  kubectl set image deployment
+ 1036  kubectl set image deployment helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:2
+ 1037  kubectl get pods
+ 1038  kubectl set image deployment helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:3
+ 1039  kubectl scale --replicas=15 deployment helloworld-deployment
+ 1040  kubectl set image deployment helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:4
+ 1041  kubectl set image deployment helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:2
+ 1042  kubectl set image deployment helloworld-deployment k8s-demo=amitvashist7/k8s-tiny-web:3
+ 1043  kubectl get deployments
+ 1044  kubectl get rs
+ 1045  ls
+ 1046  kubectl rollout undo deployment helloworld-deployment
+ 1047  kubectl get rs
+ 1048  kubectl describe rs helloworld-deployment-7c479664b6
+ 1049  kubectl get rs
+ 1050  kubectl describe rs helloworld-deployment-56568f6d7c
+ 1051  kubectl rollout undo deployment helloworld-deployment
+ 1052  kubectl get rs
+ 1053  kubectl rollout history deployment helloworld-deployment
+ 1054  kubectl rollout undo deployment helloworld-deployment --to-revsion=1
+ 1055  kubectl rollout undo deployment helloworld-deployment --to-revision=1
+ 1056  kubectl get rs
+ 1057  kubectl rollout history deployment helloworld-deployment revision=1
+ 1058  kubectl rollout history deployment helloworld-deployment revision=9
+ 1059  kubectl rollout history deployment helloworld-deployment --revision=9
+ 1060  kubectl rollout history deployment helloworld-deployment --revision=8
+ 1061  kubectl rollout history deployment helloworld-deployment --revision=4
+ 1062  kubectl rollout history deployment helloworld-deployment --revision=7
+ 1063  kubectl rollout history deployment helloworld-deployment
+ 1064  kubectl rollout history deployment helloworld-deployment --revision=7
+ 1065  kubectl rollout undo deployment helloworld-deployment --to-revision=7
+ 1066  kubectl get rs
+ 1067  ls
+ 1068  cd k8s-docker-20190819/
+ 1069  ls
+ 1070  cp -rf K8s/04-Deployment/helloworld.yml .
+ 1071  vim helloworld.yml
+ 1072  kubectl create -f helloworld.yml
+ 1073  kubectl get deployments
+ 1074  kubectl get rs
+ 1075  kubectl set image deployment helloworld-deploy k8s-demo=amitvashist7/k8s-tiny-web:3
+ 1076  kubectl get rs
