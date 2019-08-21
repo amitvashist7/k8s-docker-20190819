@@ -62,3 +62,10 @@
    62  cd ..
    63  ls
    64  history > K8s-history.txt
+012  kubectl create -f helloworld.yml
+ 1013  kubectl get pods
+ 1014  kubectl get pods -o wide
+ 1015  kubectl cluster-info
+ 1017  kubectl version
+ 1019  kubectl api-versions
+ 1020  kubectl api-resources
