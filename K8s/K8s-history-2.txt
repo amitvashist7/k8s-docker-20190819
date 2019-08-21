@@ -1,80 +1,3 @@
-  972  kubectl get nodes 
-  973  ls
-  974  git clone https://github.com/amitvashist7/k8s-docker-20190819.git
-  975  ls
-  976  cd k8s-docker-20190819/
-  977  ls
-  978  cd K8s/
-  979  ls
-  980  cd 02-First-App/
-  981  ls
-  982  kubectl create -f helloworld.yml 
-  983  kubectl get pods 
-  984  kubectl get pods -o wide
-  985  kubectl cluster-info
-  986  kubectl versions
-  987  kubectl version
-  988  kubectl api-version
-  989  kubectl api-versions
-  990  kubectl api-resources
-  991  ls
-  992  cd ..
-  993  ls
-  994  history 
-  995  ls
-  996  vi K8s-history.txt 
-  997  vi K8s-history-2.txt 
-  998  ls
-  999  git add . 
- 1000  git commit -m "K8s-History" ; git push origin master 
- 1001  ls
- 1002  cd k8s-docker-20190819/
- 1003  ls
- 1004  cd K8s/
- 1005  ls
- 1006  kubectl get pods 
- 1007  ls
- 1008  cp -rf ../../kubernetes-project/replication-controller 03-Replication-controller
- 1009  ls
- 1010  cd 03-Replication-controller/
- 1011  ls
- 1012  vim helloworld-repl-controller.yml 
- 1013  kubectl create -f helloworld-repl-controller.yml 
- 1014  kubectl get rc
- 1015  kubectl get pods 
- 1016  kubectl get pods -o wide 
- 1017  cd 
- 1018  kubectl get pods -o wide 
- 1019  kubectl delete pod helloworld-controller-cfdcw
- 1020  kubectl get pods 
- 1021  kubectl delete pod helloworld-controller-ggkl8 helloworld-controller-kxlls
- 1022  kubectl get pods 
- 1023  kubectl describe pods helloworld-controller-cf6bk
- 1024  kubectl get rc 
- 1025  kubectl edit rc helloworld-controller
- 1026  kubectl get rc 
- 1027  kubectl get pods 
- 1028  vim k8s-docker-20190819/K8s/03-Replication-controller/helloworld-repl-controller.yml 
- 1029  kubectl create -f k8s-docker-20190819/K8s/03-Replication-controller/helloworld-repl-controller.yml
- 1030  kubectl update -f k8s-docker-20190819/K8s/03-Replication-controller/helloworld-repl-controller.yml
- 1031  kubectl apply -f k8s-docker-20190819/K8s/03-Replication-controller/helloworld-repl-controller.yml
- 1032  kubectl get pods 
- 1033  kubectl get pods -o wide 
- 1034  kubectl get pods 
- 1035  kubectl scale --replica=4 rc helloworld-controller
- 1036  kubectl scale --replicas=4 rc helloworld-controller
- 1037  kubectl get pods 
- 1038  kubectl scale --replicas=1 rc helloworld-controller
- 1039  kubectl get pods 
- 1040  kubectl describe  rc helloworld-controller
- 1041  ls
- 1042  cd k8s-docker-20190819/
- 1043  ls
- 1044  cd K8s/
- 1045  ls
- 1046  cat K8s-history-2.txt >> K8s-history.txt 
- 1047  history > K8s-history-2.txt 
-
 1016  kubectl get pods
  1017  kubectl create -f helloworld.yml
  1018  kubectl get pods
@@ -136,3 +59,36 @@
  1074  kubectl get rs
  1075  kubectl set image deployment helloworld-deploy k8s-demo=amitvashist7/k8s-tiny-web:3
  1076  kubectl get rs
+ 1088  kubectl get deployment --delete-all
+ 1089  kubectl delete deployment --all
+ 1090  kubectl get svc
+ 1091  kubectl delete svc helloworld-deployment
+ 1092  kubectl get svc
+ 1093  kubectl run dcoker-demo --image=amitvashist7/get-started:part2 --port=80
+ 1094  kubectl get deployments
+ 1095  kubectl get rs
+ 1096  kubectl get pod
+ 1097  kubectl expose deployment dcoker-demo --type=NodePort
+ 1098  kubectl get svc
+ 1099  kubectl get pod -o wide
+ 1100  curl 10.128.15.206
+ 1101  curl 10.128.15.206:31457
+ 1102  kubectl get svc
+ 1103  kubectl expose deployment dcoker-demo --type=LoadBalancer
+ 1104  kubectl edit svc dcoker-demo
+ 1105  kubectl get svc
+ 1107  kubectl get deployments
+ 1108  kubectl scale --replicas=5 deployments dcoker-demo
+ 1109  kubectl get deployments
+ 1110  kubectl get pods
+ 1111  kubectl get svc
+ 1112  kubectl describe svc dcoker-demo
+ 1113  kubectl get pods -o wide
+ 1114  kubectl scale --replicas=3 deployments dcoker-demo
+ 1115  kubectl describe svc dcoker-demo
+ 1116  kubectl scale --replicas=1 deployments dcoker-demo
+ 1117  kubectl describe svc dcoker-demo
+ 1118  kubectl scale --replicas=3 deployments dcoker-demo
+ 1119  kubectl describe svc dcoker-demo
+ 1120  kubectl expose deployment dcoker-demo --external-ip=172.31.0.11
+
