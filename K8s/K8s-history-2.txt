@@ -91,4 +91,28 @@
  1118  kubectl scale --replicas=3 deployments dcoker-demo
  1119  kubectl describe svc dcoker-demo
  1120  kubectl expose deployment dcoker-demo --external-ip=172.31.0.11
+1020  kubectl get nodes --show-labels
+ 1021  kubectl label nodes gke-k8s-demo-default-pool-e4c7cbc5-6xf8 hardware=virtual
+ 1022  cat helloworld-nodeselector.yml
+ 1023  kubectl get pods
+ 1024  kubectl label nodes gke-k8s-demo-default-pool-e4c7cbc5-6xf8 env=prod
+ 1025  kubectl get pods
+ 1026  kubectl get pods -o wide
+ 1027  kubectl get nodes --show-labels
+ 1028  kubectl label nodes gke-k8s-demo-default-pool-e4c7cbc5-j7bj hardware=virtual
+ 1029  ls
+ 1030  cp -rf helloworld-nodeselector.yml helloworld-nodeselector-2.yml
+ 1031  vim helloworld-nodeselector-2.yml
+ 1032  kubectl create -f helloworld-nodeselector-2.yml
+ 1033  kubectl get pods
+ 1034  kubectl get pods -o wide | grep -i helloworld-deployment-3
+ 1035  ls
+ 1036  cat helloworld.yml
+ 1037  kubectl create -f helloworld.yml
+1040  kubectl delete deployments --all
+
+
+
+
+
 
