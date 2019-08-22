@@ -176,6 +176,52 @@
  1119  kubectl run -i --tty busynbox --image=busybox --restart=Never -- /bin/sh
  1120  kubectl run -i --tty busybox --image=busybox --restart=Never -- /bin/sh
 
+1130  kubectl exec -it database  -- mysql -u root -p
+ 1131  ls
+ 1132*
+ 1133  kubectl get pods,deployments,svc,secrets
+ 1134  kubectl delete -f 06-Service-discovery/
+ 1135  kubectl get pods,deployments,svc,secrets
+ 1136  ls
+ 1137  kubectl pods
+ 1138  kubectl get pods
+ 1139  kubectl delete pods busybox    busynbox
+ 1140  ls
+ 1141  cp -rf ../../kubernetes-project/configmap 07-ConfigMap
+ 1142  ls
+ 1143  cd 07-ConfigMap/
+ 1144  ls
+ 1145  cat reverseproxy.conf
+ 1146  kubectl get configmap
+ 1147  cat nginx.yml
+ 1148  kubectl create configmap nginx-config --from-file=reverseproxy.conf
+ 1149  kubectl get configmap
+ 1150  kubectl describe configmap nginx-config
+
+1151  ls
+ 1152  vim nginx.yml
+ 1153  ls
+ 1154  kubectl create -f nginx.yml
+ 1155  kubectl get pods
+ 1156  kubectl desribe pod helloworld-nginx
+ 1157  kubectl describe pod helloworld-nginx
+ 1158  ls
+ 1159  kubectl create -f nginx.yml
+ 1160  kubectl create -f nginx-service.yml
+ 1161  kubectl get svc
+ 1162  kubectl edit svc helloworld-nginx-service
+ 1163  kubectl get svc
+ 1164  ls
+ 1165  kubectl get svc
+ 1166  ls
+ 1167  vim nginx.yml
+ 1168  kubectl get pods
+ 1169  kubectl exec -it helloworld-nginx -c nginx -- bash
+ 1170  kubectl get pods
+ 1171  kubectl get configMap
+ 1172  kubectl edit configMap nginx-config
+ 1173  kubectl exec -it helloworld-nginx -c nginx -- bash
+
 
 
 
