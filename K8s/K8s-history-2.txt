@@ -110,7 +110,71 @@
  1036  cat helloworld.yml
  1037  kubectl create -f helloworld.yml
 1040  kubectl delete deployments --all
-
+ 1047  kubectl create -f wordpress-secrets.yml
+ 1048  kubectl get secrets
+ 1049  ls
+ 1050  cat wordpress-single-deployment-no-volumes.yml
+ 1051  kubectl create -f wordpress-single-deployment-no-volumes.yml
+ 1052  kubectl get pods
+ 1053  kubectl describe pod wordpress-deployment-7b954b495d-g8pqn
+ 1054  ls
+ 1055  cat wordpress-service.yml
+ 1056  vim wordpress-service.yml
+ 1057  kubectl create -f wordpress-service.yml
+ 1058  kubectl get pods
+ 1059  kubectl get svc
+ 1060  kubectl get pods
+ 1061  kubectl describe pod wordpress-deployment-7b954b495d-g8pqn
+ 1062  kubectl exec -it wordpress-deployment-7b954b495d-g8pqn -c mysql -- mysql -u root -p
+ 1063  ls
+ 1064  cat wordpress-service.yml
+ 1065  ls
+ 1066  cd ..
+ 1067  ls
+ 1068  kubectl get svc
+ 1069  kubectl delete svc wordpress-service
+ 1070  kubectl delete deployment --all
+1081  kubectl get ns
+ 1082  kubectl get pods -n kube-system
+ 1083  ls
+ 1084  cd 06-Service-discovery/
+ 1085  ls
+ 1086  cat secrets.yml
+ 1087  kubectl create -f secrets.yml
+ 1088  ls
+ 1089  cat helloworld-db.yml
+ 1090  ls
+ 1091  cat database.yml
+ 1092  ls
+ 1093  kubectl create -f database.yml
+ 1094  ls
+ 1095  cat database-service.yml
+ 1096  kubectl get pods
+ 1097  kubectl create -f database-service.yml
+ 1098  kubectl get svc
+ 1099  ls
+ 1100  cat helloworld-db.yml
+ 1101  ls
+ 1102  kubectl create -f helloworld-db.yml
+ 1103  kubectl get pods
+1103  kubectl get pods
+ 1104  ls
+ 1105  cat helloworld-db.yml
+ 1106  ls
+ 1107  cat helloworld-db-service.yml
+ 1108  kubectl create -f helloworld-db-service.yml
+ 1109  kubectl get svc
+ 1110  kubectl edit svc helloworld-db-service
+ 1111  kubectl get svc
+ 1112  ls
+ 1113  cat helloworld-db.yml
+ 1114  kubectl get svc
+ 1115  kubectl run -it --image=busybox --restart=Never -- /bin/sh
+ 1116  kubectl run -i --tty busynbox --image=busybox --restart=Never -- /bin/sh
+ 1117  kubectl get svc
+ 1118  kubectl get pods
+ 1119  kubectl run -i --tty busynbox --image=busybox --restart=Never -- /bin/sh
+ 1120  kubectl run -i --tty busybox --image=busybox --restart=Never -- /bin/sh
 
 
 
