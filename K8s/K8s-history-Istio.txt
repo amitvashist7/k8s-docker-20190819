@@ -1,0 +1,107 @@
+    7  ls
+    8  cd k8s-docker-20190819/
+    9  ls
+   10  cd K8s/
+   11  ls
+   12  cd 08-Statefullset/
+   13  ls
+   14  vim cassandra.yaml 
+   15  ls
+   16  cd ..
+   17  ls
+   18  cd ../../kubernetes-project/
+   19  ls
+   20  cd nfs-persistent-volume/
+   21  ls
+   22  cat nfs-pv.yaml 
+   23  ls
+   24  cat nfs-pvc.yaml 
+   25  ls
+   26  cat nfs-busybox-rc.yaml 
+   27  ls
+   28  cd ..
+   29  ls
+   30  cd ..
+   31  cd k8s-docker-20190819/
+   32  ls
+   33  cd K8s/
+   34  ls
+   35  cp -rf ../../kubernetes-project/nfs-persistent-volume 09-Nfs-persistent-volume 
+   36  ls
+   37  cp -rf ../../kubernetes-project/istio 
+   38  ls
+   39  cp -rf ../../kubernetes-project/istio 10-Istio
+   40  ls
+   41  cd 10-Istio/
+   42  ls
+   43  cat README.m
+   44  cat README.md 
+   45  ls
+   46  cd 
+   47  ls
+   48  cd istio-1.0.2/
+   49  ls
+   50  cd bin/
+   51  ls
+   52  cat ~/.profile 
+   53  pwd
+   54  vim ~/.profile
+   55  source ~/.profile 
+   56  cd
+   57  ls
+   58  istioctl --help
+   59  ls
+   60  gcloud config get-value core/account 
+   61  kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin  --user=$gcloud config get-value core/account) 
+   62  kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin  --user=$(gcloud config get-value core/account) 
+   63  ls
+   64  cd istio-1.0.2/
+   65  ls
+   66  cd install/
+   67  ls
+   68  cd kubernetes/helm/
+   69  ls
+   70  cd istio/templates/
+   71  ls
+   72  kubectl create -f crds.yaml 
+   73  ls
+   74  cd ..
+   75  ls
+   76  cd ..
+   77  ls
+   78  cd ..
+   79  ls
+   80  vim istio-demo.yaml 
+   81  kubectl create -f istio-demo.yaml 
+   82  cd 
+   83  ls
+   84  kubectl get ns
+   85  kubectl get pods -n istio-system
+   86  ls
+   87  kubectl label ns default istio-inection=enabled
+   88  kubectl get ns 
+   89  ls
+   90  cd k8s-docker-20190819/K8s/
+   91  ls
+   92  cd 10-Istio/
+   93  ls
+   94  vim helloworld.yaml 
+   95  1
+   96  kubectl create -f <(istioctl kube-inject -f helloworld.yaml) 
+   97  kubectl get svc 
+   98  kubectl get pods 
+   99  kubectl describe pod hello-58cfbd7756-k2w29
+  100  ls
+  101  cat helloworld-gw.yaml 
+  102  kubectl create -f helloworld-gw.yaml
+  103  kubectl get svc 
+  104  kubectl get ns 
+  105  kubectl get svc -n istio-system
+  106  git add . ; git commit -m "Istio"; git push origin master 
+  107  history 
+  108  ls
+  109  cd ..
+  110  ls
+  111  cd K8s/
+  112  ls
+  113  history > K8s-history-Istio.txt
