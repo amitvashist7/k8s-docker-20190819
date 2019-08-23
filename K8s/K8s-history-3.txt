@@ -47,3 +47,79 @@
    53  ls
    54  history  K8s-history-3.txt
    55  history >  K8s-history-3.txt
+   56  git add . ; git commit -m "Ingress"; git push origin master 
+   57  ls
+   58  cd 07-Ingress/
+   59  ls
+   60  vim ingress.yml 
+   61  kubectl apply -f ingress.yml 
+   62  curl 35.202.208.167/v2
+   63  ls
+   64  cd ..
+   65  ls
+   66  cd ..
+   67  l
+   68  cd K8s/
+   69  ls
+   70  cd ..
+   71  ls
+   72  cd ..
+   73  ls
+   74  cd kubernetes-project/
+   75  ls
+   76  cd istio/
+   77  ls
+   78  cat external-service.yaml 
+   79  ls
+   80  cat helloworld.yaml 
+   81  ls
+   82  cd ..
+   83  ls
+   84  cd 
+   85  ls
+   86  cd k8s-docker-20190819/K8s/
+   87  ls
+   88  cd 07-Ingress/
+   89  ls
+   90  cd ..
+   91  kubectl delete -f 07-Ingress/
+   92  ls
+   93  kubectl get svc 
+   94  kubectl delete svc nginx-ingress-controller
+   95  history 
+   96  ls
+   97  cp -rf ../../kubernetes-project/statefullset 08-Statefullset
+   98  ls
+   99  cd 08-Statefullset/
+  100  ls
+  101  cat helloworld-stateful.yaml 
+  102  kubectl get pods 
+  103  kubectl create -f helloworld-stateful.yaml 
+  104  cat helloworld-stateful.yaml 
+  105  kubectl get pods 
+  106  kubectl delete pod helloworld-statefull-1
+  107  kubectl get statefullset
+  108  kubectl get statefulset
+  109  kubectl scale --replicas=10 statefullset helloworld-statefull
+  110  kubectl scale --replicas=10 statefulset helloworld-statefull
+  111  kubectl scale --replicas=2 statefulset helloworld-statefull
+  112  kubectl describe statefulset helloworld-statefull
+  113  kubectl delete statefulset helloworld-statefull
+  114  ls
+  115  vim cassandra.yaml 
+  116  kubectl get pv 
+  117  kubectl get pvc
+  118  ls
+  119  kubectl create -f cassandra.yaml 
+  120  kubectl get pv 
+  121  kubectl get pvc
+  122  kubectl get pv 
+  123  vim cassandra.yaml 
+  124  kubectl get pv 
+  125  kubectl get pvc
+  126  kubectl get pods 
+  127  kubectl exec -it cassandra-0 -- bash 
+  128  ls
+  129  cd ..
+  130  ls
+  131  history > K8s-history-3.txt

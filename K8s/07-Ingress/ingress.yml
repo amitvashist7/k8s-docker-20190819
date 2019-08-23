@@ -15,7 +15,7 @@ spec:
   - host: helloworld-v2.example.com
     http:
       paths:
-      - path: /
+      - path: /v2
         backend:
           serviceName: helloworld-v2
           servicePort: 80
