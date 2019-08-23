@@ -1,0 +1,49 @@
+    7  ls
+    8  cd K8s/
+    9  ls
+   10  cp -rf ../../kubernetes-project/ingress 07-Ingress
+   11  ls
+   12  cd 07-Ingress/
+   13  ls
+   14  cat nginx-ingress-controller.yml 
+   15  ls
+   16  cat ingress.yml 
+   17  ls
+   18  kubectl create -f nginx-ingress-controller.yml 
+   19  kubectl get pods 
+   20  vim helloworld-v1.yml 
+   21  ls
+   22  rm -rf 1
+   23  cd ..
+   24  kubectl create -f 07-Ingress/
+   25  kubectl get pods 
+   26  kubectl delete pod nginx-ingress-controller-7gnhn
+   27  kubectl get pods 
+   28  kubectl create clusterrolebinding add-on-cluster-admin   --clusterrole=cluster-admin   --serviceaccount=kube-system:default
+   29  kubectl create clusterrolebinding add-on-cluster-admin-1   --clusterrole=cluster-admin   --serviceaccount=default:default
+   30  kubectl get pods 
+   31  kubectl delete pod nginx-ingress-controller-b44kf
+   32  kubectl get pods 
+   33  kubectl get svc 
+   34  ls
+   35  kubectl get svc 
+   36  kubectl get pods 
+   37  kubectl get rc 
+   38  kubectl expose rc nginx-ingress-controller --type=LoadBalancer
+   39  kubectl get rc 
+   40  kubectl get svc 
+   41  curl 35.202.208.167
+   42  kubectl get pods -o wide 
+   43  curl 35.202.208.167 -H 'Host: helloworld-v2.example.com'
+   44  curl 35.202.208.167
+   45  curl 35.202.208.167 -H 'Host: helloworld-v2.example.com'
+   46  curl 35.202.208.167 -H 'Host: helloworld-v1.example.com'
+   47  curl 35.202.208.167
+   48  curl 35.202.208.167 -H 'Host: helloworld-v1.example.com'
+   49  curl 35.202.208.167 -H 'Host: helloworld-v2.example.com'
+   50  kubectl get svc 
+   51  ls
+   52  history 
+   53  ls
+   54  history  K8s-history-3.txt
+   55  history >  K8s-history-3.txt
